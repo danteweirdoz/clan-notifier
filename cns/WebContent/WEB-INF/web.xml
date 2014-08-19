@@ -9,4 +9,25 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+    <servlet>
+    <description>User Rest Servlet</description>
+    <display-name>UserRestServlet</display-name>
+    <servlet-name>UserRestServlet</servlet-name>
+    <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+    <init-param>
+      <description></description>
+      <param-name>jersey.config.server.provider.packages</param-name>
+      <param-value>clannotifier.cns</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserRestServlet</servlet-name>
+    <url-pattern>/UserRestServlet</url-pattern>
+    <url-pattern>/api/*</url-pattern>
+  </servlet-mapping>
+  
+  
+  
 </web-app>
