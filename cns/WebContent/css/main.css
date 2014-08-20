@@ -15,7 +15,6 @@ body {
 	font-family: ClashofClans, cursive;
 	margin: 0;
 	background-color: #EEEEE7;
-	max-width: 600px;
 	margin: auto;
 }
 button { /*clash button*/
@@ -35,7 +34,7 @@ button { /*clash button*/
 	text-shadow: black 0 .2em, black 0 0 .05em, black 0 0 .05em;
 	padding: .75em;
 	background-image: linear-gradient(to bottom, #BDE763, #5AAE10);
-	margin: .25em;
+	margin: .25rem;
 }
 button:hover, button:focus {
 	background-image: linear-gradient(to bottom, #CEED8A, #83C24C);
@@ -46,7 +45,7 @@ button:active {
 	transform: scale(.9);
 	transition: all .03s linear;
 }
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], input[type="email"] {
 	border: 2px solid black;
 	box-shadow: inset rgba(0,0,0,.5) 0 2px;
 	border-radius: .5em;
@@ -108,13 +107,12 @@ input[type="checkbox"]:checked:before {
 .credentials {
 	text-align: center;
 }
-ul, ol {
+ul.emails {
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	counter-reset: li;
 }
-li {
+.emails li {
 	border-style: solid;
 	border-width: 1px 2px 3px;
 	border-radius: .5em;
@@ -123,22 +121,78 @@ li {
 	margin: 5px 0;
 	padding: .75em;
 }
-ol > li:before {
-	content: counter(li) ".";
-	counter-increment: li;
-	padding-right: .75em;
-	border-right: 1px solid #999;
-	margin-right: .75em;
-	display: inline-block;
-	width: 1.5em;
-}
-li:nth-child(odd) {
+.emails li:nth-child(odd) {
 	background-image: linear-gradient(to bottom, #CECFCA, #C8C9C3);
 	box-shadow: inset #D9D8D3 0 0 0 1px;
 	border-color: #65605C;
 }
-li:nth-child(even) {
+.emails li:nth-child(even) {
 	background-image: linear-gradient(to bottom, #E1E2DC, #DBDCD7);
 	box-shadow: inset #EAEBE6 0 0 0 1px;
 	border-color: #797671;
+}
+.session {
+	overflow: hidden;
+	max-width: 50rem;
+	margin: auto;
+	background-color: #5C5450;
+	position: relative;
+	padding-top: 4rem;
+	border-radius: 1rem;
+	box-shadow: inset rgba(255,255,255,.8) 0 2px 1px; 
+}
+.session .tabs {
+	position: absolute;
+	top: .5rem;
+	height: 3.5rem;
+	left: 5.5rem;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	text-shadow: black 0 .2em, black 0 0 .05em, black 0 0 .05em;
+	color: white;
+}
+.session .tab {
+	background-image: linear-gradient(to bottom, #7C7470, #544C4C);
+	border: 1px solid #ECECE4;
+	border-bottom-width: 0;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	display: inline-block;
+	padding: 0 1rem;
+	height: 100%;
+	border-top-right-radius: .5rem;
+	border-top-left-radius: .5rem;
+}
+.session .tab.active {
+	background-image: linear-gradient(to bottom, #DBDBCF, #EEEEE7);
+	border: none;
+}
+.session .tab a {
+	color: inherit;
+	text-decoration: inherit;
+	display: block;
+	height: 100%;
+	line-height: 3.5rem;
+}
+button.close {
+	background-image: linear-gradient(to bottom, #F81F2D, #DC0406);
+	font-size: 1.5rem;
+	width: 3rem;
+	height: 3rem;
+	padding: 0;
+}
+.session > button.close {
+	position: absolute;
+	top: .25rem;
+	right: .25rem;	
+}
+.session .tab-content {
+	background-color: #EEEEE7;
+	border-radius: .5rem;
+	margin: 0 .5rem .5rem .5rem;
+	padding: .5rem;
+}
+.session .tab-content:not(.active) {
+	display: none;
 }
