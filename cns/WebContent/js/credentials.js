@@ -11,7 +11,7 @@
 	
 	var clickedSignup = false;
 	
-	signup.onclick = function(){clickedSignup = true; form.submit()}
+	signup.onclick = function(){clickedSignup = true; form.onsubmit()}
 	
 	form.onsubmit = function() {
 		//TODO: input validation, return early on failure
