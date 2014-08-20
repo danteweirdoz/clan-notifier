@@ -6,9 +6,9 @@ import javax.ws.rs.core.MediaType;
 @Path("user")
 public class User {
 	
-	@Path("user/login")
+	@Path("login")
 	@POST
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.TEXT_PLAIN)
 	public String login(@PathParam("username") String userName) {
 		return "Hello " + userName;
 	}
