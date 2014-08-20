@@ -7,11 +7,11 @@
  */
 (function(exports){
 	var form = document.getElementById('credentials');
-	var signup = document.getElementById('signup');
+	var signupEl = document.getElementById('signup');
 	
 	var clickedSignup = false;
 	
-	signup.onclick = function(){clickedSignup = true; form.onsubmit()}
+	signupEl.onclick = function(){clickedSignup = true; form.onsubmit()}
 	
 	form.onsubmit = function() {
 		//TODO: input validation, return early on failure
@@ -33,4 +33,23 @@
 		clickedSignup = false;
 		return false;
 	};
+	
+	function signup(username, password) {
+		return new Promise(function(resolve, reject) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("POST", "/cns/user/signup", true, username, password);
+			xhr.onabort = xhr.onerror = xhr.ontimeout = reject;
+			xhr.onload = resolve;
+			xhr.send();
+		});
+	}
+	function login(username, password) {
+		return new Promise(function(resolve, reject) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("POST", "/cns/user/login", true, username, password);
+			xhr.onabort = xhr.onerror = xhr.ontimeout = reject;
+			xhr.onload = resolve;
+			xhr.send();
+		});
+	}
 })(window);
