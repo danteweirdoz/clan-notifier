@@ -3,21 +3,23 @@
 	<head>
 		<link rel="stylesheet" href="css/main.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script src=""></script>
+		<script src="js/credentials.js" defer></script>
 	</head>
 	<body>
 		<header class="clan-logo">
 			<img src="img/symbols/50.png">
 			<h1>Clan Notifier</h1>
 		</header>
-		<div class="credentials">
-			<input type="text" placeholder="username">
+		<form id="credentials" class="credentials">
+			<input type="text" placeholder="username" name="username">
 			<br>
-			<input type="password" placeholder="password">
+			<input type="password" placeholder="password" name="password">
+			<br>
+			<input type="checkbox" name="remember" id="remember"><label for="remember">Remember me</label>
 			<br>
 			<button id="signup" class="signup">Sign Up</button>
 			<button id="login" class="login">Log In</button>
-		</div>
+		</form>
 		<ul>
 			<li>foo
 			<li>bar
