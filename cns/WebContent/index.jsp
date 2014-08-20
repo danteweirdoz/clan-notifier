@@ -12,14 +12,14 @@
 			<h1>Clan Notifier</h1>
 		</header>
 		<form id="credentials" class="credentials">
-			<input type="text" placeholder="username" name="username">
+			<input type="text" placeholder="username" name="username" required>
 			<br>
-			<input type="password" placeholder="password" name="password">
+			<input type="password" placeholder="password" name="password" required>
 			<br>
 			<input type="checkbox" name="remember" id="remember"><label for="remember">Remember me</label>
 			<br>
-			<button id="signup" class="signup">Sign Up</button>
-			<button id="login" class="login">Log In</button>
+			<button type="button" id="signup" class="signup">Sign Up</button>
+			<button type="submit" id="login" class="login">Log In</button>
 		</form>
 		<ul>
 			<li>foo
